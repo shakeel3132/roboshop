@@ -82,8 +82,6 @@ services:
   shipping:
     image: shipping:v1
     container_name: shipping
-    ports:
-    - "7084:7084"
     depends_on:
     - mysql
   rabbitmq:
