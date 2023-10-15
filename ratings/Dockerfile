@@ -2,7 +2,7 @@
 # Build the app
 #
 FROM php:7.4-apache
-
+EXPOSE 7086
 RUN apt-get update && apt-get install -yqq unzip libzip-dev \
     && docker-php-ext-install pdo_mysql opcache zip
 
