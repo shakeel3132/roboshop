@@ -34,7 +34,7 @@ services:
     image: web:v1
     container_name: web
     ports:
-    - "80:80"
+    - "7080:7080"
     depends_on:
     - catalogue
     - user
@@ -49,6 +49,8 @@ services:
   catalogue:
     image: catalogue:v1
     container_name: catalogue
+    ports:
+    - "7081:7081"
     depends_on:
     - mongodb
   redis:
@@ -59,12 +61,16 @@ services:
   user:
     image: user:v1
     container_name: user
+    ports:
+    - "7082:7082"
     depends_on:
     - mongodb
     - redis
   cart:
     image: cart:v1
     container_name: cart
+    ports:
+    - "7083:7083"
     depends_on:
     - redis
     - catalogue
@@ -76,6 +82,8 @@ services:
   shipping:
     image: shipping:v1
     container_name: shipping
+    ports:
+    - "7084:7084"
     depends_on:
     - mysql
   rabbitmq:
@@ -86,11 +94,15 @@ services:
   payment:
     image: payment:v1
     container_name: payment
+    ports:
+    - "7085:7085"
     depends_on:
     - rabbitmq
   ratings:
     image: ratings:v1
     container_name: ratings
+    ports:
+    - "7086:7086"
     depends_on:
     - mysql
 
