@@ -1,5 +1,5 @@
 FROM python:3.9
-EXPOSE 8080
+EXPOSE 7085
 USER root
 WORKDIR /app
 COPY requirements.txt /app/
