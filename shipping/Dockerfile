@@ -7,9 +7,9 @@ COPY src /opt/shipping/src/
 RUN mvn package
 
 FROM openjdk:8-jre-alpine
-EXPOSE 8080
+EXPOSE 7084
 WORKDIR /opt/shipping
-ENV CART_ENDPOINT=cart:8080
+ENV CART_ENDPOINT=cart:7083
 ENV DB_HOST=mysql
 COPY --from=build /opt/shipping/target/shipping-1.0.jar shipping.jar
 CMD [ "java", "-Xmn256m", "-Xmx768m", "-jar", "shipping.jar" ]
