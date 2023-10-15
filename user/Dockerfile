@@ -1,6 +1,6 @@
 FROM node:14
 
-EXPOSE 8080
+EXPOSE 7082
 
 WORKDIR /opt/server
 
